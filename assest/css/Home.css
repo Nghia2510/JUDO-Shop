@@ -3,19 +3,18 @@
 }
 .header{
     height: var(--header-height);
-    background-image: linear-gradient(0, #fe6433,#f53e2d);
+    /* background-image: linear-gradient(0, #fe6433,#f53e2d); */
 }
 .header__navbar{
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
-    /* background-color: #000000;
-    color: #a1a1a1; */
+    padding: 4px 0;
+    background-color: #000000;
    
 }
 .header__navbar-list{
     list-style: none;
-    padding-left: 0;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     
@@ -130,7 +129,7 @@
     content: "";
     display: block;
     position: absolute;
-    border-left: 1px solid #fb9086;
+    border-left: 1px solid #ffff;
     height: 16px;
     right: -9px;
     top: 50%;
@@ -261,7 +260,7 @@
     background-color: #d3d3d3;
 }    
 .header__notify-item--viewed{
-    background-color: rgb(238,75,43,0.08);
+    background-color: rgb(254,205,165, 0.12);
 }
 
 .header__notify-link{
@@ -424,6 +423,7 @@
     display: flex;
     align-items: center;
     margin: 0 8px;;
+    background-color: var(--white-color);
 }
 .header__mobile-search{
     padding: 0 12px ;
@@ -456,6 +456,7 @@
     border-radius: 2px;
     background-color: var(--white-color);
     align-items: center;
+    border: 1px solid   #d0d0d0;
 }
 .header__cart{
     width: 150px;
@@ -473,7 +474,7 @@
 }
 .header__cart-icon{
     font-size: 2.4rem;
-    color: var(--white-color);
+    color: #b7b7b7;
 }
 
 .header__cart-list{
@@ -626,10 +627,11 @@
     right: -5px;
     font-size: 1.4rem;
     line-height: 1.4rem;
-    color: var(--third-color);
-    background-color: var(--white-color);
+    color: var(--white-color);
+    background-color: #000000;
     border-radius: 10px;
-    border: 2px solid #Ee4020;
+    border: 2px solid var(--white-color);
+    animation:  beamer_bounce linear infinite 1.5s;
 }
 .header__search-input-wrap{
     /* ke thua theo chieu ngang */
@@ -837,6 +839,81 @@
     background-color: #f5f5f5;
 
 }
+/* slider */
+.big-image{
+    position: relative;
+    margin-bottom: 2px;
+}
+.big-image__img{
+    /* position: relative; */
+    width: 100%;
+    max-height: 565px;
+    margin-bottom: 55px;
+}
+.big-image__btn-theme{
+    position: absolute;
+    right: 85px;
+    bottom: 85px;
+    height: 60px;
+    min-width: 210px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #ef2f24;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 19px 35px;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    transition: none 0s ease 0s;
+}
+.big-image__btn-theme:hover{
+    color: #000000;
+}
+.big-image__btn-theme::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    transform: skewX(-20deg);
+    left: -10%;
+    transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    background-color: #ffffff;
+    opacity: .5;
+    z-index: -12;
+}
+.big-image__btn-theme::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.42);
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    z-index: -15;
+    top: 0;
+    -webkit-transition: all 0.94s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    -moz-transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    -o-transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+}
+
+.big-image__btn-theme:hover:before,
+.big-image__btn-theme:hover:after {
+    opacity: 1;
+    width: 120%;
+}
+
+
 .category{
     border-radius: 2px;
     background-color: var(--white-color);
@@ -1161,7 +1238,7 @@ i.home-product-item__like-icon-fill{
     border-color: transparent rgba(225, 216, 64, 0.94) transparent rgba(225, 216, 64, 0.94);
 }
 .home-product-item__sale-off-percent{
-    color: #ee4d2d;
+    color: #ff0000;
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.2rem;
